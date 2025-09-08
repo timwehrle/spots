@@ -89,8 +89,8 @@
 				className:
 					'!size-8 bg-primary text-primary-foreground rounded-full !flex !items-center !justify-center',
 				html: `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"> <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <path d="M3 14c.83.642 2.077 1.017 3.5 1c1.423.017 2.67-.358 3.5-1s2.077-1.017 3.5-1c1.423-.017 2.67.358 3.5 1M8 3a2.4 2.4 0 0 0-1 2a2.4 2.4 0 0 0 1 2m4-4a2.4 2.4 0 0 0-1 2a2.4 2.4 0 0 0 1 2" /> <path d="M3 10h14v5a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z" /> <path d="M16.746 16.726a3 3 0 1 0 .252-5.555" /> </g> </svg>`,
-				iconAnchor: [16, 32],
-				popupAnchor: [0, -32]
+				iconAnchor: [16, 16],
+				popupAnchor: [0, -16]
 			});
 		}
 
@@ -124,9 +124,9 @@
 		if (!mapEl) return;
 		map = L.map(mapEl, options);
 
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		L.tileLayer('https://tile.openstreetmap.de/{z}/{x}/{y}.png', {
 			attribution:
-				'© <a target="_blank" rel="noreferrer" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 			updateWhenIdle: true,
 			updateWhenZooming: false,
 			keepBuffer: 1,
