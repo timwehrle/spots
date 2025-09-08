@@ -30,6 +30,16 @@
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [5.120337989483516, 52.09100320567425] },
       "properties": { "name": "Graaf Floris Café", "rating": 5, "tags": ["lecker", "belebte-lage", "außenplätze", "essen"], "notes": "Angenehm; mit fünf Personen schwer Sitzplätze zu finden." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.777711151234764, 48.247060136029354] },
+      "properties": { "name": "Gelati Don Peppino", "rating": 3, "tags": ["außenplätze", "essen"], "notes": "Eigentlich eine Eisdiele; Viel Kaffee für wenig Geld." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.802294585312287, 48.26332624517883] },
+      "properties": { "name": "Cozy Café", "rating": 3, "tags": ["lecker", "brunch"], "notes": "Eignet sich gut für Frühstücken." }
     }
   ]
 }
