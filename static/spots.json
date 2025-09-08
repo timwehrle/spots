@@ -40,6 +40,11 @@
       "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [7.802294585312287, 48.26332624517883] },
       "properties": { "name": "Cozy Café", "rating": 3, "tags": ["lecker", "brunch"], "notes": "Eignet sich gut für Frühstücken." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.804000974815129, 48.26361597670407] },
+      "properties": { "name": "Jackys Glashaus", "rating": 4, "tags": ["lecker", "brunch", "außenplätze"], "notes": "Viel Auswahl an Frühstück." }
     }
   ]
 }
