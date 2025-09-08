@@ -110,6 +110,73 @@
 		}
 	}
 
+	function addLocateControl() {
+		if (!L || !map) return;
+
+		const ctrl = new L.Control({ position: 'topleft' });
+		ctrl.onAdd = () => {
+			const btn = L!.DomUtil.create(
+				'button',
+				'rounded-full p-1.5 size-12 !cursor-pointer flex items-center justify-center shadow-sm border border-border !bg-[rgba(255,255,255,0.5)] backdrop-blur-sm !text-black'
+			);
+			btn.title = 'Mich lokalisieren';
+			btn.innerHTML = `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+				<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 3l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
+			</svg>`;
+			L?.DomEvent.on(btn, 'click', (e: Event) => {
+				L?.DomEvent.stopPropagation(e);
+				map!.locate({ setView: true, maxZoom: 16, enableHighAccuracy: true });
+			});
+			return btn;
+		};
+		ctrl.addTo(map);
+
+		let here: LNS.Marker | null = null;
+		let ring: LNS.Circle | null = null;
+		let locIcon: LNS.DivIcon | null = null;
+
+		if (!locIcon) {
+			locIcon = L!.divIcon({
+				className:
+					'!size-10 rounded-full bg-primary text-primary-foreground !flex !items-center !justify-center',
+				html: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					<path fill="currentColor" d="M15 8c1.628 0 3.2.787 4.707 2.293a1 1 0 0 1-1.414 1.414c-.848-.848-1.662-1.369-2.444-1.587L15 16.064V21a1 1 0 0 1-2 0v-4h-2v4a1 1 0 0 1-2 0v-4.929l-.85-5.951c-.781.218-1.595.739-2.443 1.587a1 1 0 1 1-1.414-1.414C5.799 8.787 7.373 8 9 8zm-3-7a3 3 0 1 1-3 3l.005-.176A3 3 0 0 1 12 1" />
+				</svg>`,
+				iconSize: [40, 40],
+				iconAnchor: [20, 20]
+			});
+		}
+
+		map!.on('locationfound', (e: LNS.LocationEvent) => {
+			if (here) {
+				here.setLatLng(e.latlng).setIcon(locIcon!);
+			} else {
+				here = L!
+					.marker(e.latlng, {
+						icon: locIcon!,
+						title: 'Du bist hier',
+						interactive: false,
+						zIndexOffset: 1000
+					})
+					.addTo(map!);
+			}
+
+			if (ring) {
+				ring.setLatLng(e.latlng).setRadius(e.accuracy);
+			} else {
+				ring = L!
+					.circle(e.latlng, {
+						radius: e.accuracy,
+						color: '#2563eb',
+						weight: 2,
+						opacity: 0.8,
+						fillOpacity: 0.12
+					})
+					.addTo(map!);
+			}
+		});
+	}
+
 	const options: MapOptions = {
 		center: [48.7784, 9.1806],
 		zoom: 13,
@@ -135,6 +202,7 @@
 
 		const fc = await loadSpots();
 		renderFeatures(fc);
+		addLocateControl();
 	});
 </script>
 
@@ -145,6 +213,25 @@
 <div class="h-screen w-full" bind:this={mapEl}></div>
 
 <style>
+	:global(.leaflet-control-zoom) {
+		border-radius: var(--radius-3xl) !important;
+		border: 1px solid var(--border) !important;
+		box-shadow: var(--shadow-sm) !important;
+		overflow: hidden !important;
+	}
+
+	:global(.leaflet-control-zoom-in),
+	:global(.leaflet-control-zoom-out) {
+		background-color: rgba(255, 255, 255, 0.5) !important;
+		color: var(--color-black) !important;
+		backdrop-filter: blur(8px);
+		width: 3rem !important;
+		height: 3rem !important;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+	}
+
 	:global(.leaflet-popup-content-wrapper) {
 		background: var(--background) !important;
 		border: 1px solid var(--border);
