@@ -119,7 +119,7 @@
 				'button',
 				'rounded-full p-1.5 size-12 !cursor-pointer flex items-center justify-center shadow-sm border border-border !bg-[rgba(255,255,255,0.5)] backdrop-blur-sm !text-black'
 			);
-			btn.title = 'Mich lokalisieren';
+			btn.title = 'Aktuellen Standort anzeigen';
 			btn.innerHTML = `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 				<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 3l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
 			</svg>`;
@@ -210,9 +210,24 @@
 	<title>Favoriten von Tim Wehrle</title>
 </svelte:head>
 
-<div class="h-screen w-full" bind:this={mapEl}></div>
+<div class="h-svh w-full" bind:this={mapEl}></div>
 
 <style>
+	:global(.leaflet-container) {
+		font-family:
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			Roboto,
+			Oxygen,
+			Ubuntu,
+			Cantarell,
+			'Open Sans',
+			'Helvetica Neue',
+			sans-serif !important;
+	}
+
 	:global(.leaflet-control-zoom) {
 		border-radius: var(--radius-3xl) !important;
 		border: 1px solid var(--border) !important;
