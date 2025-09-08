@@ -1,0 +1,35 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [9.16110217838948, 48.77531579490758] },
+      "properties": { "name": "Moulu Café", "rating": 5, "tags": ["ruhig", "außenplätze", "lecker", "to-go"], "notes": "Konstant guter Kaffee. An sonnigen Tagen sehr voll." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [9.161955151753826, 48.777231058388054] },
+      "properties": { "name": "Mókuska", "rating": 4, "tags": ["lecker", "außenplätze", "to-go"], "notes": "Bisher immer nur Kaffee mitgenommen." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [9.172653163044819, 48.77496533716784] },
+      "properties": { "name": "Walther Café", "rating": 5, "tags": ["außenplätze", "belebte-lage", "gebäck", "teuer"], "notes": "Lage mit viel Laufpublikum – gut zum Draußensitzen." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [9.156052136478207, 48.77838204118659] },
+      "properties": { "name": "Wyld", "rating": 5, "tags": ["lecker", "ruhig", "außenplätze"], "notes": "Auswahl besonderer Getränke im Vergleich zu Standardcafés." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [9.168401141078855, 48.7651617428132] },
+      "properties": { "name": "Café Galao", "rating": 5, "tags": ["lecker", "belebte-lage", "außenplätze", "essen"], "notes": "Viele Außenplätze; warme Speisen verfügbar." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [5.120337989483516, 52.09100320567425] },
+      "properties": { "name": "Graaf Floris Café", "rating": 5, "tags": ["lecker", "belebte-lage", "außenplätze", "essen"], "notes": "Angenehm; mit fünf Personen schwer Sitzplätze zu finden." }
+    }
+  ]
+}
