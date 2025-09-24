@@ -13,6 +13,21 @@
     },
     {
       "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [9.159720197780093, 48.77677135202171] },
+      "properties": { "name": "siebenundsechzig", "rating": 3.5, "tags": ["lecker", "außenplätze", "ruhig"], "notes": "Bisschen unbequem draußen zu sitzen. Guter Kaffee." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [9.16900705396747, 48.76591864844074] },
+      "properties": { "name": "Bruno Café & Bar", "rating": 3.9, "tags": ["lecker", "außenplätze", "ruhig"], "notes": "Sehr guter Kaffee, aber Preis-Leistung nicht so gut." }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [9.160078007795027, 48.77665277298261] },
+      "properties": { "name": "BRT Café", "rating": 4, "tags": ["lecker", "außenplätze", "ruhig"], "notes": "Großer Cappucino ist wirklich groß. Getränke selber holen." }
+    },
+    {
+      "type": "Feature",
       "geometry": { "type": "Point", "coordinates": [9.172653163044819, 48.77496533716784] },
       "properties": { "name": "Walther Café", "rating": 5, "tags": ["außenplätze", "belebte-lage", "gebäck", "teuer"], "notes": "Lage mit viel Laufpublikum – gut zum Draußensitzen." }
     },
